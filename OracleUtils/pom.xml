@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.spread.otojunior</groupId>
+  <artifactId>OracleUtils</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>OracleUtils</name>
+  <description/>
+  
+  <properties>
+  	<projeto>n06</projeto>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>br.gov.bndes.sistema.${projeto}</groupId>
+  		<artifactId>${projeto}_commons</artifactId>
+  		<version>1.0.0-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>br.gov.bndes.sistema.${projeto}</groupId>
+  		<artifactId>${projeto}_model</artifactId>
+  		<version>1.0.0-SNAPSHOT</version>
+  	</dependency>
+  	
+  	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>4.1.9.Final</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>4.1.9.Final</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>4.3.1.Final</version>
+	</dependency>
+  	
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>${basedir}/src</sourceDirectory>
+    <outputDirectory>${basedir}/bin</outputDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
