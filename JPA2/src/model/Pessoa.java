@@ -17,7 +17,6 @@ public class Pessoa {
 	}
 	
 	public Pessoa(Long id, String nome) {
-		super();
 		this.id = id;
 		this.nome = nome;
 	}
