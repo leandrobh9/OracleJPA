@@ -5,14 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import model.Pessoa;
 
 
 /**
- * Session factory Utils. Usado atualmente como um auxiliar para a criação de banco.
- * @author oto.junior
+ * @author Leandro Souza
  */
 public class SessionFactoryUtil {
 	/**
@@ -25,20 +24,18 @@ public class SessionFactoryUtil {
 		
 		EntityManager em = emf.createEntityManager();
 		
-		//em.setFlushMode(FlushModeType.AUTO);
 		Pessoa p = new Pessoa();
 		p.setNome("Leandro");
 		
 		em.getTransaction().begin();
 		em.persist(p);
-		em.flush();
 		em.getTransaction().commit();
 		
-		Query query = em.createNamedQuery("find");
-		List<Pessoa> l = query.getResultList();
+		TypedQuery<Pessoa> tq = em.createNamedQuery("find", Pessoa.class);
+		List<Pessoa> l = tq.getResultList();
 		
 		for (Pessoa pess : l){
-			System.out.println(pess.getNome());
+			System.out.println(pess.getId() + " " + pess.getNome());
 		}
 		
 		em.close();
